@@ -26,7 +26,7 @@ import serviceConfig from './config/service.config';
         store: await redisStore({
           socket: {
             host: configService.get('redis.host') || 'localhost',
-            port: configService.get('redis.port') || 6379,
+            port: configService.get('redis.port') || 19964,
           },
         }),
         ttl: configService.get('redis.ttl') * 1000, // Convert to milliseconds

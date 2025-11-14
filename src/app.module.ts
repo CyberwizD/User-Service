@@ -25,8 +25,8 @@ import serviceConfig from './config/service.config';
       useFactory: async (configService: ConfigService) => ({
         store: await redisStore({
           socket: {
-            host: configService.get('redis.url') || 'localhost',
-            port: 6379,
+            host: configService.get('redis.host') || 'localhost',
+            port: configService.get('redis.port') || 6379,
           },
         }),
         ttl: configService.get('redis.ttl') * 1000, // Convert to milliseconds
